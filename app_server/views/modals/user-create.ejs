@@ -1,0 +1,112 @@
+<div class="modal fade" id="create-user-modal" tabindex="-1" role="dialog" aria-labelledby="Kayıt Ol" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fab fa-creative-commons-by">&nbsp;</i>Kayıt Ol</h5>
+          <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form autocomplete="off" action="/register" method="POST">
+              <div class="form-row">
+                  <div class="col form-group">
+                    <label for="create-email"><i class="fas fa-envelope" style="color: seagreen">&nbsp;</i>Email</label>
+                    <input type="email" name="create-email" class="form-control" aria-describedby="emailHelp" placeholder="Okulunuzun emailini giriniz" required>
+                    <small id="emailHelp" class="form-text text-muted">Mailine gönderdiğimiz kod ile üyeliğini tamamlayabilirsin.</small>
+                  </div>
+                  <div class="col form-group">
+                    <label for="create-username"><i class="fas fa-user" style="color: seagreen">&nbsp;</i>Kullanıcı Adı</label>
+                    <input type="text" name="create-username" class="form-control" aria-describedby="usernameHelp" placeholder="Kullanıcı adı giriniz" required>
+                    <small id="usernameHelp" class="form-text text-muted">Kullanıcı adın karakterini yansıtır, unutma.</small>
+                  </div>
+              </div>
+              <div class="form-row">
+                  <div class="col form-group">
+                    <input type="password" name="create-password1" class="form-control" placeholder="Parola giriniz" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="En az sekiz karakterli, özelkarakter içermeyen bir şifre giriniz." required>
+                  </div>
+                  <div class="col form-group">
+                    <input type="password" name="create-password2" class="form-control" placeholder="Parola giriniz" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="En az sekiz karakterli, özelkarakter içermeyen bir şifre giriniz." required>
+                  </div>
+              </div>
+              <div class="form-row">
+                <div class="col form-group">
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <label for="create-firstname"><i class="fas fa-pen" style="color:goldenrod">&nbsp;</i>Ad</label>
+                            <input type="text" name="create-firstname" class="form-control" placeholder="Adınızı giriniz" required>
+                          </div>
+                          <div class="col form-group">
+                              <label for="create-lastname"><i class="fas fa-pen" style="color:goldenrod">&nbsp;</i>Soyad</label>
+                            <input type="text" name="create-lastname" class="form-control" placeholder="Soyadınızı giriniz" required>
+                          </div>
+                        </div>
+                  </div>
+                  <div class="col form-group">
+                      <div class="form-group" ng-init="cregender='Seçiniz'">
+                          <label for="exampleFormControlSelect2"> 
+                            <i class="fas fa-genderless" ng-if="cregender=='Seçiniz'" style="color:seagreen">&nbsp;</i>
+                            <i class="fas fa-mars" ng-if="cregender=='Erkek'" style="color:navy">&nbsp;</i>
+                            <i class="fas fa-venus" ng-if="cregender=='Kadın'" style="color:crimson">&nbsp;</i>
+                            <i class="fas fa-transgender" ng-if="cregender=='Diğer'" style="color:darkviolet">&nbsp;</i>Cinsiyet</label>
+                          <select name="create-gender" ng-model="cregender" class="form-control" required>
+                            <option>Seçiniz</option>
+                            <option>Erkek</option>
+                            <option>Kadın</option>
+                            <option>Diğer</option>
+                          </select>
+                        </div>
+                  </div>
+              </div>
+              <div class="form-row">
+                <div class="col form-group">
+                    <label for="create-university"><i class="fas fa-user-graduate" style="color:dodgerblue">&nbsp;</i>Okulunuz</label>
+                    <input name="create-university" list="searchUniList" type="search" class="form-control" placeholder="Okuduğunuz Üniversiteyi Seçiniz" title="Plaka Kodu İle Arama Yapabilirsiniz. Üniversitenizi seçiniz." required>
+                    <datalist id="searchUniList">
+                        <option ng-repeat="v in nguniversities" value="{{v['uni']}}">{{v['plaka']}} - {{v['uni']}}</option>
+                    </datalist>
+                </div>
+
+                <div class="col form-group">
+                    <label for="create-birthdate"><i class="fas fa-birthday-cake" style="color:lightcoral">&nbsp;</i>Doğum Tarihi</label>
+                    <input type="date" name="create-birthdate" class="form-control" placeholder="YYYY-MM-DD" required>
+                </div>
+            </div>
+
+              <button type="submit" class="btn btn-success" style="width: 100%">Kayıt</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="login-user-modal" tabindex="-1" role="dialog" aria-labelledby="Kayıt Ol" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><i class="fas fa-door-open">&nbsp;</i>giriş Yap</h5>
+          <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form autocomplete="off">
+              <div class="form-row">
+                  <div class="col form-group">
+                    <label for="create-email"><i class="fas fa-envelope" style="color: seagreen">&nbsp;</i>Email</label>
+                    <input type="email" name="login-email" class="form-control" aria-describedby="emailHelp" placeholder="Okulunuzun emailini giriniz" required>
+                    <small id="emailHelp" class="form-text text-muted">Mailini veya kullanıcı adını kullanabilirsin.</small>
+                  </div>
+              </div>
+              <div class="form-row">
+                  <div class="col form-group">
+                    <input type="password" name="login-password" class="form-control" placeholder="Parola giriniz" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="En az sekiz karakterli, özelkarakter içermeyen bir şifre giriniz." required>
+                  </div>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%">giriş</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>

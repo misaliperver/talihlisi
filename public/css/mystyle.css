@@ -1,0 +1,31 @@
+html{ font-size: 100%; height: 100%;  overflow-x: hidden; touch-action: manipulation; }
+
+body{ font-size: 15px; font-family: 'Roboto', sans-serif; width: 100%; height: 100%; margin: 0; font-weight: 300;
+	-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; word-wrap: break-word; 
+	background: rgb(248, 243, 245); color: #000; }
+
+#mynavbar{background-color: #880E4F;}
+#mynavbar a{ color: rgb(248, 243, 245);}
+
+h1, h2, h3, h4, h5, h6, p, a, ul, span, li, img{ margin: 0; padding: 0; font-weight: 300; }
+a, button{ display: inline-block; text-decoration: none; color: inherit; transition: all .3s; }
+li{ list-style: none; display: inline-block; }
+
+/* footer */
+footer{  position: relative; bottom:0; width: 100%; padding: 70px 0 30px; background: #fff; }
+footer .footer-section{ margin-bottom: 40px; }
+footer .footer-section .title{ margin-bottom: 20px; }
+footer .footer-section ul > li{ margin-right: 10px; margin-top: 10px; }
+footer .copyright{ margin: 10px 0; }
+footer .icons > li > a{ height: 40px; width: 40px; border-radius: 40px; line-height: 40px; text-align: center; 
+	transition: all .3s; font-size: 1.2em; box-shadow: 0px 0px 2px rgba(0,0,0,1); background: #1b5e20; color: #fff; }
+footer .icons > li > a:hover{ color:#c5e1a5; transform: translateY(-2px); box-shadow: 5px 10px 20px rgba(0,0,0,.3); }
+footer .input-area{ position: relative; height: 50px; width: 100%; box-shadow: 0px 0px 1px #bbb; background: #F5F7F6; }
+footer .input-area .email-input{ position: absolute; top: 0; bottom: 0; left: 0; right: 0; width: 100%;
+	padding: 0 70px 0 20px; background: transparent; border: 0; outline: 0; }
+footer .input-area .email-input:focus{ box-shadow: 0px 0px 1px #aaa; }
+footer .input-area .submit-btn{ position: absolute; top: 0; bottom: 0; right: 0; width: 50px; background: none; 
+	border: 0; outline: 0; margin-right: 10px; opacity: .8; cursor: pointer; transition: all .2s; }
+
+footer .icons li a { padding:10px; text-align:center; }
+

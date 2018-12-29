@@ -1,0 +1,155 @@
+<div class="modal fade" id="search-raffle-modal" tabindex="-1" role="dialog" aria-labelledby="Çekiliş Ara" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title"><i class="fas fa-search">&nbsp;</i>Çekiliş Ara</h5>
+            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            asdasd
+        </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="create-raffle-modal" tabindex="-1" role="dialog" aria-labelledby="Kayıt Ol" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+        <div class="modal-header bg-aqua">
+            <h5 class="modal-title"><i class="far fa-calendar-plus">&nbsp;</i>Çekiliş Oluştur</h5>
+            <button id="create-raffle-close" type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div id="create-raffle-modal-body" class="modal-body">
+            <button type="button" class="btn btn-success text-light" data-toggle="modal" data-target="#create-couple2raffle-modal" ng-click="couple2raffle()">
+                <a href="#" class="badge badge-danger"><i class="fas fa-random"></i></a>
+                Eşleşmeli Çekiliş
+            </button>            
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="create-couple2raffle-modal" tabindex="-1" role="dialog" aria-labelledby="Raffle Oluştur" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+        <div class="modal-header bg-success">
+            <h5 class="modal-title text-light"><i class="fas fa-random">&nbsp;</i>Eşleşmeli Çekiliş</h5>
+            <button id="create-couple2raffle-modal-close" type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div id="create-couple2raffle-modal-modal-body" class="modal-body">
+            <form id="form-couple2raffle">
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="emailInput">Email</label>
+                            <input name="email" type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Email Adresi Giriniz" required />
+                            <small id="emailHelp" class="form-text text-muted">Sana ulaşabilmemiz için bir mail'e ihtiyacımız var.</small>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="titleInput">Başlık</label>
+                            <input name="title" type="text" class="form-control" id="titleInput" aria-describedby="titleHelp" placeholder="Çekilişinize bir isim verin." required />
+                            <small id="titleHelp" class="form-text text-muted">Size özel, eğlenceli bir başlık girin.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="issueInput">Açıklama</label>
+                            <input name="issue" type="text" class="form-control" id="issueInput" aria-describedby="issueHelp" placeholder="Çekilişinize kısaca özetleyin." required />
+                            <small id="issueHelp" class="form-text text-muted">Nedenini kısa cümlelerle açıkla.</small>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="limitInput">Kişi Limiti</label>
+                            <input name="limit" type="text" class="form-control" id="limitInput" aria-describedby="limitHelp" placeholder="Limit Ekle (rakamsal: 1 , 2 , 3 ...)." required />
+                            <small id="limitHelp" class="form-text text-muted">En fazla kaç kişi katılabilir.</small>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="adminInput">Admin?</label>
+                            <select name="admin" class="form-control" id="adminInput">
+                                <option value="true">Evet</option>
+                                <option value="false">Hayır</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <button class="btn btn-primary" ng-click="post_couple2raffle()" data-toggle="modal" data-target="#show-couple2raffle-modal">Oluştur</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="show-couple2raffle-modal" tabindex="-1" role="dialog" aria-labelledby="Raffle Göster" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+        <div class="modal-header bg-show">
+            <h5 id="show-couple2raffle-modal-title" class="modal-title text-light"><i class="fas fa-random">&nbsp;</i>Eşleşmeli Çekiliş</h5>
+            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div id="show-couple2raffle-modal-body" class="modal-body">
+            <a class="bg-primary text-light"  style="float: right;">
+                <span class="badge badge-red">limit <strong id="show-couple2raffle-modal-body-limit"></strong></span>
+                | <small id="show-couple2raffle-modal-body-date" class="text-warning"></small>
+            </a>
+            <p id="show-couple2raffle-modal-body-p"></p>
+            <hr/>
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" for="show-couple2raffle-modal-body-PaylasInput">Paylaşmak İçin</span>
+                        </div>
+                        <input id="show-couple2raffle-modal-body-PaylasInput" type="text" class="form-control" >
+                        <div class="input-group-append">
+                            <button class="btn btn-success" onclick="copyButton1()">Kopyala</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" for="show-couple2raffle-modal-body-AdminInput">Admin Erişimi İçin</span>
+                        </div>
+                        <input id="show-couple2raffle-modal-body-AdminInput" type="text" class="form-control" >
+                        <div class="input-group-append">
+                            <button class="btn btn-success" onclick="copyButton2()">Kopyala</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <script>
+                function copyButton1() {
+                    var copyText = document.getElementById("show-couple2raffle-modal-body-PaylasInput");
+                    copyText.select();
+                    document.execCommand("copy");
+                }
+                function copyButton2() {
+                    var copyText = document.getElementById("show-couple2raffle-modal-body-AdminInput");
+                    copyText.select();
+                    document.execCommand("copy");
+                }
+            </script>
+        </div>
+        </div>
+    </div>
+</div>
+

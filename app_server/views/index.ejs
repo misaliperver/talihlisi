@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center"><div class="light"></div></div>
+<div class="sky d-flex justify-content-center">
+    <div class="color" id="headerNotification">
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+            <div class="flipper">
+                <div class="front">
+                    <img src="/img/noelfather/tree96.png">
+                </div>
+                <div class="back">
+                    <i style="font-size: 96px; color:greenyellow;" class="fas fa-user"></i>
+                </div>
+            </div>
+        </div>
+        <h1>Bu Gün Yine <strong style="color:#0ff">Talihlisi</strong>n!</h1>
+        <p>Arkadaşlarınla çekiliş yapmanın kolay ve eğlenceli yolu.<br> Hızlıca bir etkinlik oluştur ve sizinkileri davet et.</p>
+        <button type="button" class="btn btn-outline-success text-light" data-toggle="modal" data-target="#search-raffle-modal"><i class="fas fa-search">&nbsp;</i>Ara</button>
+        <button type="button" class="btn btn-outline-primary text-light" data-toggle="modal" data-target="#create-raffle-modal"><i class="far fa-calendar-plus">&nbsp;</i>Oluştur</button>
+    </div>
+</div>
+
+<% include modals/raffle.ejs %>
